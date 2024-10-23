@@ -17,6 +17,10 @@ router.get('/' ,   FlightController.getAllFlights);
 router.get('/:id' ,   FlightController.getFlight);
 
 
+//    /api/vi/flights/:id/seats  -> controller req.params.id ..
+router.patch('/:id/seats' ,   FlightController.updateSeats);
+
+
 // router.delete('/:id',   CityController.destroyCity);
 // router.get('/' , AirplaneController.getAirplanes);
 // router.get('/:id' , AirplaneController.getAirplane);   //   /airplanes/:id

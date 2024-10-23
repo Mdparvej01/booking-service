@@ -9,8 +9,12 @@ const {FlightMiddleware} = require('../../middlewares')
 router.post('/' , FlightMiddleware.validateCreateRequest ,   FlightController.createFlight);
 
 
+
+
 //get all flights with filter ...
 router.get('/' ,   FlightController.getAllFlights);
+
+router.get('/:id' ,   FlightController.getFlight);
 
 
 // router.delete('/:id',   CityController.destroyCity);

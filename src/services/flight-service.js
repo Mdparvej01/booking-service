@@ -25,7 +25,6 @@ async function createFlight(data){
     }
 }
 
-
 // filter Logic....
 
 async function getAllFlights(query){
@@ -92,11 +91,30 @@ async function getAllFlights(query){
 
 
 
+async function getFlight(id){
+    
+    try {
+
+       const flight = await flightRepository.get(id);
+    //    console.log("id=>" , id , flight);
+       return flight; 
+
+    }catch(error){
+
+       if(error.statusCode == StatusCodes.NOT_FOUND){
+           throw new AppError('Flight you requested is not present..' , StatusCodes.INTERNAL_SERVER_ERROR);
+       }
+
+       throw new AppError('Cannot fetch data of  the Flight' , StatusCodes.INTERNAL_SERVER_ERROR);
+    }
+}
+
 
 
 module.exports = {
     createFlight,
-    getAllFlights
+    getAllFlights,
+    getFlight
 
 }
 

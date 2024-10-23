@@ -69,7 +69,34 @@ async function getAllFlights (req,res) {
     }
 }
 
+// post/flights/:id
+
+async function getFlight (req,res) {
+    // console.log("req q=>" , req.query);
+    try {
+    const flight = await FlightService.getFlight(req.params.id);
+    // console.log("idd req prm =>",req,params.id);
+
+    return res 
+             .status(200)
+             .json({
+                success:true,
+                flight
+             })
+    } catch (error){
+     return res
+             .status(400)
+             .json({
+                 success:false,
+                 error
+             })
+    }
+}
+
+
+
 module.exports = {
     createFlight,
-    getAllFlights
+    getAllFlights,
+    getFlight
 }

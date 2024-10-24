@@ -1,19 +1,23 @@
 const express = require('express');
 
-const { InfoController } = require('../../controllers');
+// const { InfoController } = require('../../controllers');
 
-const airplaneRoutes = require('./airplane-routes');
-const airportRoutes = require('./airport-routes');
-const flightRoutes = require('./flight-routes')
+const bookingRoutes = require('./booking-routes');
+// const airplaneRoutes = require('./airplane-routes');
+// const airportRoutes = require('./airport-routes');
+// const flightRoutes = require('./flight-routes')
 
 const router = express.Router();
 
-router.use('/airplanes' , airplaneRoutes);
-router.use('/airport' , airportRoutes);
-router.use('/flights' , flightRoutes);
+router.use('/bookings' , bookingRoutes);
+
+// router.use('/airplanes' , airplaneRoutes);
+// router.use('/airport' , airportRoutes);
+// router.use('/flights' , flightRoutes);
 
 
-router.get('/info', InfoController.info);
+
+// router.get('/info', InfoController.info);
 
 
 

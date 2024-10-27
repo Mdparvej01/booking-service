@@ -1,6 +1,6 @@
 const express = require('express');
 
-// const { InfoController } = require('../../controllers');
+const { InfoController } = require('../../controllers');
 
 const bookingRoutes = require('./booking-routes');
 // const airplaneRoutes = require('./airplane-routes');
@@ -10,6 +10,7 @@ const bookingRoutes = require('./booking-routes');
 const router = express.Router();
 
 router.use('/bookings' , bookingRoutes);
+router.use('/bookings/payment' , bookingRoutes);
 
 // router.use('/airplanes' , airplaneRoutes);
 // router.use('/airport' , airportRoutes);

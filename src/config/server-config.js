@@ -3,5 +3,5 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 module.exports = {
-    PORT: 4000
+    PORT: 4001
 }

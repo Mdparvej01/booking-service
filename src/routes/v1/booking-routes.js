@@ -24,6 +24,17 @@ router.post(
     BookingController.createBooking
 )
 
+router.post(
+    '/payment',
+    BookingController.makePayment
+)
+
+
+// router.post(
+//     '/payments',
+//     BookingController.
+// )
+
 
 // router.delete('/:id',   CityController.destroyCity);
 // router.get('/' , AirplaneController.getAirplanes);
